@@ -1,7 +1,7 @@
 import { postReq } from "../api/axios";
 
 
-const register = async (data) => {
+const registerd = async (data) => {
     try {
         const response = await postReq('https://auth06-npm-package.up.railway.app/register', data);
     }
@@ -9,3 +9,12 @@ const register = async (data) => {
         console.error(error);
     }
 }
+
+
+
+
+
+
+
+
+export {registerd}
