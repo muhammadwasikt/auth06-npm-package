@@ -1,3 +1,4 @@
+const express = require('express');
 const {verifyToken} = require("./verifyToken/jwtToken");
 const {db} = require('./config/config')
 const {sendEmail} = require('./email/emailSender')
@@ -6,9 +7,19 @@ const {register , login, forgotPassword, resetPassword, emailVerification, delet
 const dotenv = require('dotenv')
 
 
-
+const app = express()
 dotenv.config()
 
+
+
+
+
+
+const PORT = process.env.PORT || 3000
+
+app.listen(PORT, ()=>{
+    console.log(`server is running on port ${PORT}`)
+})
 
 
 module.exports = {
