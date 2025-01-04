@@ -21,6 +21,7 @@ app.listen(PORT, ()=>{
     console.log(`server is running on port ${PORT}`)
 })
 
+app.use(routes)
 
 module.exports = {
     verifyToken,

@@ -22,7 +22,7 @@ const ResetPassword = () => {
                 return;
             }
 
-            const response = await axios.post(`http://localhost:3001/reset/${token}`, { password: password })
+            const response = await axios.post(`https://auth06-npm-package.up.railway.app/reset/${token}`, { password: password })
             toast.success(response.data.message)
             reset()
 
