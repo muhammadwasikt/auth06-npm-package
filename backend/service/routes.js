@@ -1,6 +1,6 @@
-const express = require('express');
-const { allData, register, login, forgotPassword, resetPassword, emailVerification, deleted, proteceted, updated } = require('../middleware/auth');
-const { verifyToken } = require('../verifyToken/jwtToken');
+import express from 'express';
+import { allData, register, login, forgotPassword, resetPassword, emailVerification, deleted, proteceted, updated } from '../middleware/auth.js';
+import { verifyToken } from '../verifyToken/jwtToken.js';
 
 
 const routes = express.Router();
@@ -17,4 +17,4 @@ routes.get('/protected',verifyToken , proteceted)
 routes.put('/update/:id',updated)
 
 
-module.exports = {routes}
+export {routes}

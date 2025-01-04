@@ -1,8 +1,8 @@
-const {User} = require("../models/user");
-const bcrypt = require("bcrypt");
-const {sendEmail} = require("../email/emailSender")
-const jwt = require("jsonwebtoken");
-const crypto = require("crypto")
+import {User} from "../models/user.js";
+import bcrypt from "bcrypt";
+import {sendEmail} from "../email/emailSender.js"
+import jwt from "jsonwebtoken";
+import crypto from "crypto"
 
 
 const secret = process.env.JWT_SECRET_KEY
@@ -88,7 +88,7 @@ const login =  async (req, res) => {
         }
         const token = jwt.sign({ id: existingUser._id }, secret, { expiresIn: '1h' });
 
-        res.status(200).send({ status: 200, message: "Login Successfully", data: token });
+        res.status(200).send({ status: 200, message: "Login Successfully", token: token });
     } catch (err) {
         console.error("Login Error:", err);
         res.status(500).send({ status: 500, message: "Internal Server Error" });
@@ -204,4 +204,4 @@ const proteceted = (req, res) => {
         res.status(400).send();
     }
 }
-module.exports = {register , updated ,proteceted , login , deleted , allData , emailVerification , forgotPassword , resetPassword}
+export {register , updated ,proteceted , login , deleted , allData , emailVerification , forgotPassword , resetPassword}

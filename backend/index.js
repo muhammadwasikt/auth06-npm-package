@@ -1,18 +1,12 @@
-const express = require('express');
-const {verifyToken} = require("./verifyToken/jwtToken");
-const {db} = require('./config/config')
-const {sendEmail} = require('./email/emailSender')
-const {routes} = require('./service/routes')
-const {register , login, forgotPassword, resetPassword, emailVerification, deleted, allData, proteceted, updated} = require('./middleware/auth')
-const dotenv = require('dotenv')
+import express from 'express';
+import {routes} from './service/routes.js'
+import dotenv from 'dotenv'
+import { db } from './config/config.js';
 
 
 const app = express()
 dotenv.config()
-
-
-
-
+db(process.env.MONGODB_URI)
 
 
 const PORT = process.env.PORT || 3000
@@ -23,21 +17,6 @@ app.listen(PORT, ()=>{
 
 app.use(routes)
 
-module.exports = {
-    verifyToken,
-    db,
-    sendEmail,
-    register,
-    login,
-    forgotPassword,
-    resetPassword,
-    emailVerification,
-    deleted,
-    allData,
-    proteceted,
-    updated,
-    routes,
-    
-}
+
 
 
