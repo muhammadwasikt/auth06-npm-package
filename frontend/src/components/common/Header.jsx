@@ -1,4 +1,4 @@
-import React from 'react'
+import {Link} from "react-router"
 
 const Header = () => {
     return (
@@ -23,36 +23,22 @@ const Header = () => {
                         <ul
                             tabIndex={0}
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                            <li><a>Home</a></li>
-                            <li>
-                                <a>Features</a>
-                                <ul className="p-2">
-                                    <li><a>Submenu 1</a></li>
-                                    <li><a>Submenu 2</a></li>
-                                </ul>
-                            </li>
-                            <li><a>About Us</a></li>
+                            <li><Link>Home</Link></li>
+                            <li><Link>Installation</Link></li>
+                            <li><Link>About Us</Link></li>
                         </ul>
                     </div>
-                    <a className="p-2 text-2xl font-bold">Auth06</a>
+                    <Link className="p-2 text-2xl font-bold">Auth06</Link>
                 </div>
-                <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-                        <li><a>Home</a></li>
-                        <li >
-                            <details>
-                                <summary>Features</summary>
-                                <ul className="p-2 ">
-                                    <li ><a >Functions</a></li>
-                                    <li ><a>Auth</a></li>
-                                </ul>
-                            </details>
-                        </li>
-                        <li><a>About Us</a></li>
+                <div className="navbar-center hidden lg:flex ">
+                    <ul className="menu menu-horizontal px-1 gap-2">
+                        <li><Link>Home</Link></li>
+                        <li><Link>Installation</Link></li>
+                        <li><Link>About Us</Link></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Docs</a>
+                    <Link className="btn">Docs</Link>
                 </div>
             </div>
         </div>

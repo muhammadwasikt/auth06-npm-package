@@ -17,7 +17,7 @@ const OTPVerification = () => {
         try {
         const otpCode = item.otp.join("");
         
-        const response = await axios.post(`http://localhost:3001/email-verification/${token}`, {emailOtp:otpCode})
+        const response = await axios.post(`https://authend.netlify.app/email-verification/${token}`, {emailOtp:otpCode})
         toast.success(response.data.message);
         reset()
         } 
